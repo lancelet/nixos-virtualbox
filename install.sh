@@ -51,3 +51,18 @@ spushd "$ZSH_CUSTOM"
 rm -f spaceship.zsh-theme
 curl -s -o spaceship.zsh-theme https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh
 spopd
+
+# Install / update spacemacs
+if [ ! -f "$HOME/.emacs.d/spacemacs.mk" ]; then
+  log 'Installing spacemacs'
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+else
+  log 'Spacemacs is already installed; updating with a git pull'
+  spushd "$HOME/.emacs.d"
+  git pull --quiet
+  spopd
+fi
+
+# Copy spacemacs config
+log 'Linking spacemacs config'
+ln -fs "$base_dir/spacemacs" "$HOME/.spacemacs"
