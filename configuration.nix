@@ -33,6 +33,12 @@
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
 
+  # Shells
+  environment.shells = with pkgs; [
+    bashInteractive
+    zsh
+  ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -97,7 +103,11 @@
   users.extraUsers.jsm = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "networkmanager" ];
+    shell = pkgs.zsh;
+    extraGroups = [ 
+      "wheel" 
+      "networkmanager" 
+    ];
   };
 
   # This value determines the NixOS release with which your system is to be
