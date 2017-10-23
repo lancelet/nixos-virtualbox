@@ -17,6 +17,8 @@ fi
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/rsa_id
 
 # Launch emacs client automatically in daemon mode
 alias ec='emacsclient --alternate-editor='''

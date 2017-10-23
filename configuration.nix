@@ -39,6 +39,13 @@
     zsh
   ];
 
+  # Virtualbox shared folders
+  fileSystems."/vbox" = {
+    fsType = "vboxsf";
+    device = "home";
+    options = [ "rw" ];
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -46,10 +53,12 @@
     ansible
     aspell
     aspellDicts.en
+    binutils
     curl
     emacs
     ffmpeg
     git
+    gnumake
     html-tidy
     leiningen
     neovim
