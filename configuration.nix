@@ -40,14 +40,14 @@
   ];
 
   # Virtualbox shared folders
-  fileSystems."/vbox" = {
-    fsType = "vboxsf";
-    device = "home";
-    options = [ "rw" ];
-  };
   fileSystems."/home/jsm/workspace" = {
     fsType = "vboxsf";
     device = "workspace";
+    options = [ "rw" "uid=1000" "gid=100" ];
+  };
+  fileSystems."/vbox" = {
+    fsType = "vboxsf";
+    device = "home";
     options = [ "rw" ];
   };
 
