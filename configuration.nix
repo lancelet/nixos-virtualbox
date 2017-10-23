@@ -45,6 +45,11 @@
     device = "home";
     options = [ "rw" ];
   };
+  fileSystems."/home/jsm/workspace" = {
+    fsType = "vboxsf";
+    device = "workspace";
+    options = [ "rw" ];
+  };
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
