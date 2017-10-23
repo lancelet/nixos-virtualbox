@@ -43,7 +43,7 @@
   fileSystems."/home/jsm/workspace" = {
     fsType = "vboxsf";
     device = "workspace";
-    options = [ "rw" "uid=1000" "gid=100" "user" ];
+    options = [ "rw" "uid=1000" "gid=100" ];
   };
   fileSystems."/vbox" = {
     fsType = "vboxsf";
