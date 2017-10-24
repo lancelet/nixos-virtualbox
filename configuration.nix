@@ -70,6 +70,7 @@
     neovim
     openssl
     openssl.dev
+    openjdk8
     sbt
     scala
     shellcheck

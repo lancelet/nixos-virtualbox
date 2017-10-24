@@ -63,3 +63,11 @@ function cntlmoff {
   fi
   proxyoff
 }
+
+# turn on JVM options
+function jvmopton {
+  JAVA_HOME=$(readlink -f $(which java) | xargs dirname | xargs dirname)
+  JVM_OPTS="-Dsbt.override.build.repos=true -Dsbt.repository.config=$HOME/workspace/tooling.repositories/repositories -Dfile.encoding=UTF8 -Xms512m -Xmx1g -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+  SBT_OPTS="$JVM_OPTS"
+  export JAVA_HOME JVM_OPTS SBT_OPTS
+}
