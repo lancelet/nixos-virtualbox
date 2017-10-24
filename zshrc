@@ -16,9 +16,9 @@ else
 fi
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 eval $(ssh-agent -s)
-ssh-add ~/.ssh/rsa_id
+ssh-add ~/.ssh/id_rsa
 
 # Launch emacs client automatically in daemon mode
 alias ec='emacsclient --alternate-editor='''
