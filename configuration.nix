@@ -59,6 +59,7 @@
     aspell
     aspellDicts.en
     binutils
+    cntlm
     curl
     emacs
     ffmpeg
