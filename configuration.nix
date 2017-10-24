@@ -123,6 +123,9 @@
       "networkmanager"
       "vboxsf"
     ];
+    openssh.authorizedKeys.keyFiles = [
+      "/home/jsm/.ssh/id_rsa.pub"
+    ];
   };
 
   # This value determines the NixOS release with which your system is to be
